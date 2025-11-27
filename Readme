@@ -2,8 +2,8 @@
 def fibonacci(n):
     sequence = [0, 1]
     for i in range(2, n):
-    next_num = sequence[i - 1] + sequence[i - 2]
-    sequence.append(next_num)
+        next_num = sequence[i - 1] + sequence[i - 2]
+        sequence.append(next_num)
     return sequence
 
 def factorial(n):
@@ -14,14 +14,16 @@ def factorial(n):
 
 try:
     n = int(input("Input a positive number:"))
+    if n <= 0:
+        print("PLease enter a number greater than 0.")
+    else:
+        print("\nFibonacci sequence")
+        print(fibonacci(n))
 
-    print("\nFibonacci sequence")
-    print(fibonacci(n))
+        print(f"\nFactorial of {n}:")
+        print(factorial(n))
 
-    print(f"\nFactorial of {n}:")
-    print(factorial(n))
-
-expect ValueError:
+except ValueError:
     print("Invalid input! PLease enter a integer.")
 
 #Part2
@@ -45,6 +47,6 @@ try:
 
         print(f"\nFactorial of {n} (using math.factorial):")
         print(math.factorial(n))
-        
+
 except ValueError:
     print("Invalid input! Please enter an integer.")
